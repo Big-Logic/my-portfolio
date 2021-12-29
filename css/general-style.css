@@ -44,7 +44,13 @@ body {
   .header__nav--item {
     position: relative; }
   .header__nav--closebtn {
-    display: none; }
+    display: none;
+    border: none;
+    background: transparent;
+    font-size: 3rem;
+    color: #f03e3e;
+    cursor: pointer;
+    font-family: 600; }
   .header__nav--link:link, .header__nav--link:visited {
     text-decoration: none;
     font-weight: 500;
@@ -52,6 +58,13 @@ body {
     display: inline-block; }
   .header__nav--btncontainer {
     display: none; }
+  .header__nav--btn {
+    border: none;
+    background: transparent;
+    font-size: 3rem;
+    color: #fff;
+    cursor: pointer;
+    font-weight: 600; }
   @media (max-width: 48em) {
     .header {
       background-color: turquoise; }
@@ -61,15 +74,27 @@ body {
         left: 0;
         width: 100%;
         height: 100vh;
-        background-color: rgba(0, 0, 0, 0.5); }
+        background-color: rgba(0, 0, 0, 0.5);
+        z-index: 999;
+        opacity: 0;
+        visibility: hidden;
+        overflow-x: hidden; }
+        .header__nav--show {
+          opacity: 1;
+          visibility: visible; }
         .header__nav--items {
           flex-direction: column;
-          width: 60%;
-          height: 100%;
+          width: 65%;
+          height: 100vh;
           overflow-y: auto;
           background-color: #000c13;
           align-items: center;
-          justify-content: space-around; }
+          justify-content: space-around;
+          z-index: 9999;
+          transform: translateX(0%);
+          transition: all 0.5s cubic-bezier(0.17, 0.67, 0.83, 0.67); }
+          .header__nav--items--show {
+            transform: translateX(100%); }
         .header__nav--closebtn {
           display: block;
           position: absolute;

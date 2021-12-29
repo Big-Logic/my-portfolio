@@ -42,6 +42,12 @@
 
   &__nav--closebtn {
     display: none;
+    border: none;
+    background: transparent;
+    font-size: 3rem;
+    color: $color-red;
+    cursor: pointer;
+    font-family: 600;
   }
 
   //   &__nav--link::before {
@@ -73,6 +79,15 @@
     display: none;
   }
 
+  &__nav--btn {
+    border: none;
+    background: transparent;
+    font-size: 3rem;
+    color: $color-white;
+    cursor: pointer;
+    font-weight: 600;
+  }
+
   @include respond(tablet-port) {
     background-color: turquoise;
 
@@ -84,15 +99,30 @@
       height: 100vh;
       background-color: $color-black-with-opacity;
       z-index: 999;
+      opacity: 0;
+      visibility: hidden;
+      overflow-x: hidden;
+
+      &--show {
+        opacity: 1;
+        visibility: visible;
+      }
 
       &--items {
         flex-direction: column;
-        width: 60%;
-        height: 100%;
+        width: 65%;
+        height: 100vh;
         overflow-y: auto;
         background-color: $shade;
         align-items: center;
         justify-content: space-around;
+        z-index: 9999;
+        transform: translateX(0%);
+        transition: all 0.5s cubic-bezier(0.17, 0.67, 0.83, 0.67);
+
+        &--show {
+          transform: translateX(100%);
+        }
       }
 
       &--closebtn {
