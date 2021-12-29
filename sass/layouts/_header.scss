@@ -1,0 +1,66 @@
+.header {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  //justify-content: space-between;
+  padding: 3rem;
+  background: transparent;
+  height: 11.2rem;
+
+  &__logo--container {
+    display: flex;
+    align-items: center;
+  }
+
+  &__logo--container {
+    justify-content: flex-start;
+    flex-grow: 1;
+  }
+
+  &__logo {
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+    font-size: 3rem;
+  }
+
+  &__nav {
+    flex-grow: 2;
+  }
+
+  &__nav--items {
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+  }
+
+  &__nav--item {
+    position: relative;
+  }
+
+  //   &__nav--link::before {
+  //     display: block;
+  //     content: "";
+  //     position: absolute;
+  //     left: 0;
+  //     top: 0;
+  //     width: 10%;
+  //     height: 100%;
+  //     background-color: $main-color;
+  //     transition: all 0.3s;
+  //   }
+
+  &__nav--link:link,
+  &__nav--link:visited {
+    text-decoration: none;
+    font-weight: 500;
+    text-transform: capitalize;
+    display: inline-block;
+  }
+
+  //   &__nav--link:hover &__nav--link::before {
+  //     width: 100%;
+  //     background-color: turquoise;
+  //   }
+}
