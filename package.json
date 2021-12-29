@@ -1,0 +1,29 @@
+{
+  "name": "my-portfolio",
+  "version": "1.0.0",
+  "description": "A website where I am storing all of my web development projects",
+  "main": "index.js",
+  "scripts": {
+    "compile:sass": "node-sass sass/main.scss css/general-style.css -w"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Big-Logic/my-portfolio.git"
+  },
+  "keywords": [
+    "Web",
+    "Design",
+    "Web",
+    "Development",
+    "Portfolio"
+  ],
+  "author": "Alfred Ngwayah",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Big-Logic/my-portfolio/issues"
+  },
+  "homepage": "https://github.com/Big-Logic/my-portfolio#readme",
+  "devDependencies": {
+    "node-sass": "^7.0.1"
+  }
+}
