@@ -32,11 +32,16 @@
   &__nav--items {
     list-style: none;
     display: flex;
+    flex-direction: row;
     justify-content: space-around;
   }
 
   &__nav--item {
     position: relative;
+  }
+
+  &__nav--closebtn {
+    display: none;
   }
 
   //   &__nav--link::before {
@@ -63,4 +68,42 @@
   //     width: 100%;
   //     background-color: turquoise;
   //   }
+
+  &__nav--btncontainer {
+    display: none;
+  }
+
+  @include respond(tablet-port) {
+    background-color: turquoise;
+
+    &__nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100vh;
+      background-color: $color-black-with-opacity;
+      z-index: 999;
+
+      &--items {
+        flex-direction: column;
+        width: 60%;
+        height: 100%;
+        overflow-y: auto;
+        background-color: $shade;
+        align-items: center;
+        justify-content: space-around;
+      }
+
+      &--closebtn {
+        display: block;
+        position: absolute;
+        top: 4%;
+        right: 4%;
+      }
+    }
+    &__nav--btncontainer {
+      display: block;
+    }
+  }
 }
