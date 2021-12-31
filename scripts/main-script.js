@@ -17,8 +17,25 @@ navCloseBtn.addEventListener('click', function () {
   headerNav.classList.remove('header__nav--show');
   headerNavItems.classList.remove('.header__nav--items--show');
 });
+//header and main navigation ends here
 
-headerNav.addEventListener('click', function () {
-  headerNav.classList.remove('header__nav--show');
-  headerNavItems.classList.remove('.header__nav--items--show');
-});
+//hero section functionalities
+const heroImageParents = document.querySelectorAll('.hero__image--parent');
+
+console.log(heroImageParents[0]);
+heroImageParents[0].style.opacity = 1;
+let counter = 0;
+const imagesDisplay = function () {
+  if (counter === heroImageParents.length) {
+    counter = 0;
+  }
+  console.log(counter);
+  heroImageParents.forEach((ele) => {
+    console.log(counter);
+    ele.style.opacity = 0;
+    heroImageParents[counter].style.opacity = 1;
+  });
+  counter = counter + 1;
+};
+
+setInterval(imagesDisplay, 6000);
