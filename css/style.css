@@ -1,0 +1,208 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; }
+
+html {
+  font-size: 62.5%; }
+
+.section {
+  padding: 8rem 0; }
+
+body {
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.6rem;
+  font-weight: 400;
+  line-height: 1.7;
+  color: #555; }
+
+.heading--primary {
+  font-size: 5rem;
+  font-weight: 700;
+  line-height: 1.19;
+  color: #05160f; }
+
+.heading--secondary {
+  font-size: 4rem;
+  font-weight: 700;
+  line-height: 1.2;
+  color: #05160f;
+  text-transform: uppercase; }
+
+.heading--tertiary {
+  font-size: 1.9rem;
+  font-weight: 700;
+  color: #05160f; }
+
+.container {
+  max-width: 120rem;
+  margin: 0 auto; }
+
+.section__header {
+  max-width: 70%;
+  margin: 5rem auto;
+  padding: 2rem;
+  text-align: center; }
+  .section__header--h2 {
+    margin-bottom: 1.5rem; }
+  .section__header--p {
+    font-weight: 500; }
+
+.grid {
+  display: grid;
+  gap: 4rem; }
+  .grid--2--cols {
+    grid-template-columns: repeat(2, 1fr); }
+  .grid--3--cols {
+    grid-template-columns: repeat(3, 1fr); }
+
+.header-section {
+  height: 110vh;
+  background-image: linear-gradient(to right, #2fdd92, #34be82); }
+
+.hero__content {
+  grid-template-columns: 60fr 40fr;
+  background-color: #fff;
+  padding: 4rem;
+  border-radius: 20px;
+  transform: translateY(20%);
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px; }
+
+.hero__image--wrapper {
+  height: 75rem;
+  overflow-y: hidden;
+  border-radius: 20px; }
+
+.hero__image {
+  width: 100%; }
+
+.hero__text--wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: 2rem; }
+
+.hero__contact {
+  margin: 4rem 0; }
+  .hero__contact p:not(:last-child) {
+    margin-bottom: 2rem; }
+  .hero__contact--icon {
+    color: #2fdd92;
+    font-size: 3rem;
+    margin-right: 1.5rem; }
+  .hero__contact--social a:link,
+  .hero__contact--social a:visited {
+    display: inline-block;
+    width: 5rem;
+    height: 5rem;
+    background-color: #777;
+    color: #fff;
+    text-align: center;
+    border-radius: 5px;
+    margin-right: 2rem;
+    font-size: 2.5rem; }
+  .hero__contact--social a:hover,
+  .hero__contact--social a:active {
+    background-image: linear-gradient(to right, #2fdd92, #34be82); }
+
+.intro,
+.title,
+.spec {
+  text-transform: uppercase;
+  margin-bottom: 1.6rem; }
+
+.about__content {
+  padding-top: 38rem; }
+
+.about__heading {
+  text-transform: uppercase;
+  margin-bottom: 3rem; }
+
+.about__info--child {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  margin-top: 3rem;
+  gap: 3rem; }
+  .about__info--child div {
+    border: 1px solid #d5f8e9;
+    padding: 2rem;
+    border-radius: 10px; }
+
+.about__info--icon {
+  font-size: 3.8rem;
+  display: inline-block;
+  background-image: linear-gradient(to right, #2fdd92, #34be82);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  transform: translateX(-0.96rem); }
+
+.about__info--figure {
+  font-size: 2.5rem;
+  font-weight: 600;
+  color: #05160f; }
+
+.about__skills--content:not(:last-child) {
+  margin-bottom: 3rem; }
+
+.about__skills--wrapper {
+  padding: 0.7rem;
+  border: 1px solid #d5f8e9;
+  border-radius: 100px; }
+  .about__skills--wrapper--main {
+    height: 1rem;
+    width: 100%;
+    background-color: #666;
+    border-radius: 100px;
+    position: relative; }
+  .about__skills--wrapper--percentage {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    background-image: linear-gradient(to right, #2fdd92, #34be82);
+    border-radius: 100px;
+    transition: all 0.6s cubic-bezier(0.5, 1, 0.89, 1); }
+  .about__skills--wrapper--html {
+    width: 1%; }
+  .about__skills--wrapper--css {
+    width: 1%; }
+  .about__skills--wrapper--javascript {
+    width: 1%; }
+  .about__skills--wrapper--react {
+    width: 1%; }
+  .about__skills--wrapper--node {
+    width: 1%; }
+
+.project {
+  background-color: #d5f8e9; }
+  .project__content--child {
+    background-color: #fff;
+    padding: 3rem;
+    border-radius: 10px; }
+  .project__content--header {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #05160f;
+    margin-bottom: 1.8rem; }
+  .project__content--icon {
+    font-size: 6.4rem;
+    display: inline-block;
+    margin-bottom: 2rem;
+    background-image: linear-gradient(to right, #2fdd92, #34be82);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent; }
+
+.services__content--child {
+  text-align: center; }
+
+.services__content--imgwrapper {
+  width: 100%;
+  border-radius: 10px; }
+
+.services__image {
+  width: 100%;
+  border-radius: 10px; }

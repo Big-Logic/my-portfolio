@@ -1,5 +1,5 @@
 @import 'abstracts/functions';
-@import 'abstracts/mixin';
+@import 'abstracts/mixins';
 @import 'abstracts/variables';
 
 @import 'base/animation';
@@ -7,8 +7,8 @@
 @import 'base/typography';
 @import 'base/utilities';
 
-@import 'layouts/flexbox';
-@import 'layouts/header';
-@import 'layouts/hero';
+@import 'components/section-header';
+
+@import 'layouts/grids';
 
 @import 'pages/home';
