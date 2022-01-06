@@ -10,4 +10,12 @@
   &--p {
     font-weight: 500;
   }
+
+  @include respond(phone) {
+    max-width: 90%;
+    margin: 1rem auto;
+    padding: 0;
+
+    margin-bottom: 4rem;
+  }
 }

@@ -1,25 +1,35 @@
 .header-section {
-  height: 110vh;
+  height: 80rem;
   background-image: linear-gradient(to right, $main-color-1, $main-color-2);
+
+  @include respond(tablet-port) {
+    height: unset;
+  }
 }
 
 .hero {
   &__content {
     grid-template-columns: 60fr 40fr;
     background-color: $color-white;
+    align-items: center;
     padding: 4rem;
     border-radius: 20px;
     transform: translateY(20%);
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    height: 83rem;
   }
 
   &__image--wrapper {
-    height: 75rem;
+    height: 98%;
     overflow-y: hidden;
     border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
   &__image {
     width: 100%;
+    border-radius: 20px;
   }
 
   &__text--wrapper {
@@ -59,6 +69,18 @@
       background-image: linear-gradient(to right, $main-color-1, $main-color-2);
     }
   }
+
+  @include respond(tablet-port) {
+    &__content {
+      grid-template-columns: 1fr;
+      height: unset;
+    }
+
+    &__image--wrapper {
+      height: 45rem;
+      align-items: flex-start;
+    }
+  }
 }
 
 .intro,
@@ -70,7 +92,7 @@
 
 .about {
   &__content {
-    padding-top: 38rem;
+    padding-top: 20rem;
   }
 
   &__heading {
@@ -89,6 +111,10 @@
         border: 1px solid $color-tint;
         padding: 2rem;
         border-radius: 10px;
+      }
+
+      @include respond(phone-medium) {
+        grid-template-columns: repeat(2, 1fr);
       }
     }
 

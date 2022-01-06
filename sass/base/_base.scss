@@ -8,6 +8,20 @@
 
 html {
   font-size: 62.5%;
+
+  @include respond(tablet-lan) {
+    & {
+      font-size: 60%;
+    }
+  }
+
+  @include respond(tablet-port) {
+    font-size: 58%;
+  }
+
+  @include respond(phone) {
+    font-size: 54%;
+  }
 }
 
 .section {

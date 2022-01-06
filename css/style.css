@@ -7,6 +7,15 @@
 
 html {
   font-size: 62.5%; }
+  @media (max-width: 64em) {
+    html {
+      font-size: 60%; } }
+  @media (max-width: 48em) {
+    html {
+      font-size: 58%; } }
+  @media (max-width: 27em) {
+    html {
+      font-size: 54%; } }
 
 .section {
   padding: 8rem 0; }
@@ -38,7 +47,8 @@ body {
 
 .container {
   max-width: 120rem;
-  margin: 0 auto; }
+  margin: 0 auto;
+  padding: 0 3rem; }
 
 .section__header {
   max-width: 70%;
@@ -49,34 +59,58 @@ body {
     margin-bottom: 1.5rem; }
   .section__header--p {
     font-weight: 500; }
+  @media (max-width: 27em) {
+    .section__header {
+      max-width: 90%;
+      margin: 1rem auto;
+      padding: 0;
+      margin-bottom: 4rem; } }
 
 .grid {
   display: grid;
   gap: 4rem; }
   .grid--2--cols {
     grid-template-columns: repeat(2, 1fr); }
+    @media (max-width: 48em) {
+      .grid--2--cols {
+        grid-template-columns: 1fr; } }
   .grid--3--cols {
     grid-template-columns: repeat(3, 1fr); }
+    @media (max-width: 48em) {
+      .grid--3--cols {
+        grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 27em) {
+      .grid--3--cols {
+        grid-template-columns: 1fr; } }
 
 .header-section {
-  height: 110vh;
+  height: 80rem;
   background-image: linear-gradient(to right, #3db2ff, #37a0e6); }
+  @media (max-width: 48em) {
+    .header-section {
+      height: unset; } }
 
 .hero__content {
   grid-template-columns: 60fr 40fr;
   background-color: #fff;
+  align-items: center;
   padding: 4rem;
   border-radius: 20px;
   transform: translateY(20%);
-  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px; }
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  height: 83rem; }
 
 .hero__image--wrapper {
-  height: 75rem;
+  height: 98%;
   overflow-y: hidden;
-  border-radius: 20px; }
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center; }
 
 .hero__image {
-  width: 100%; }
+  width: 100%;
+  border-radius: 20px; }
 
 .hero__text--wrapper {
   display: flex;
@@ -107,6 +141,14 @@ body {
   .hero__contact--social a:active {
     background-image: linear-gradient(to right, #3db2ff, #37a0e6); }
 
+@media (max-width: 48em) {
+  .hero__content {
+    grid-template-columns: 1fr;
+    height: unset; }
+  .hero__image--wrapper {
+    height: 45rem;
+    align-items: flex-start; } }
+
 .intro,
 .title,
 .spec {
@@ -114,7 +156,7 @@ body {
   margin-bottom: 1.6rem; }
 
 .about__content {
-  padding-top: 38rem; }
+  padding-top: 20rem; }
 
 .about__heading {
   text-transform: uppercase;
@@ -129,6 +171,9 @@ body {
     border: 1px solid #c5e8ff;
     padding: 2rem;
     border-radius: 10px; }
+  @media (max-width: 24em) {
+    .about__info--child {
+      grid-template-columns: repeat(2, 1fr); } }
 
 .about__info--icon {
   font-size: 3.8rem;
