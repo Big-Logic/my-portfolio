@@ -147,7 +147,10 @@ body {
     height: unset; }
   .hero__image--wrapper {
     height: 45rem;
-    align-items: flex-start; } }
+    align-items: flex-start; }
+  .hero__text--wrapper {
+    padding-left: 0;
+    margin-top: -6rem; } }
 
 .intro,
 .title,
