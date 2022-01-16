@@ -67,3 +67,24 @@ const observerSkills = new IntersectionObserver(skillsObserverFun, {
 });
 
 observerSkills.observe(aboutSkills);
+
+//leaflet library
+const makeMap = function () {
+  const pos = [6.2460127, -10.6702286];
+  const map = L.map('map', {
+    center: pos,
+    zoom: 14,
+  });
+
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution:
+      '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+  }).addTo(map);
+
+  L.marker(pos)
+    .addTo(map)
+    .bindPopup('Kendeja High School.<br> Rehab Community')
+    .openPopup();
+};
+
+makeMap();

@@ -22,4 +22,10 @@
       grid-template-columns: 1fr;
     }
   }
+  &--6040--cols {
+    grid-template-columns: 60fr 40fr;
+    @include respond(tablet-port) {
+      grid-template-columns: 1fr;
+    }
+  }
 }

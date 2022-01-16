@@ -1,4 +1,17 @@
 .footer {
+  &__child--map {
+    height: 50rem;
+    border-radius: 20px;
+    overflow: hidden;
+
+    @include respond(phone) {
+      & {
+        height: 35rem;
+      }
+    }
+  }
+  background-color: $color-shade;
+  padding: 3rem;
   &__social a:link,
   &__social a:visited {
     display: inline-block;
