@@ -1,3 +1,7 @@
+const mainHeader = document.querySelector('.main__header');
+const headerContentCont = document.querySelector('.header__content--cont');
+const navToggleBtn = document.querySelector('.nav__toggle--btn');
+
 const nameEle = document.querySelector('.author__name');
 const projectContent = document.querySelector('.project__content');
 const projectEle = document.querySelectorAll('.project__content--child');
@@ -6,6 +10,28 @@ const projectViewBtn = document.querySelector('project__view--btn');
 const projectNextBtn = document.querySelector('.next__btn');
 
 const sliderEle = document.querySelectorAll('.gallery__child');
+
+/*
+Mobile nav 
+*/
+let toggleState = true;
+//Add event listener to the nav toggle btn
+navToggleBtn.addEventListener('click', function () {
+  mainHeader.classList.toggle('main__header--show');
+  headerContentCont.classList.toggle('header__content--cont-show');
+
+  if (toggleState) {
+    this.innerHTML = '<i class="las la-times"></i>';
+  } else if (!toggleState) {
+    this.innerHTML = '<i class="las la-bars"></i>';
+  }
+
+  if (toggleState) {
+    toggleState = false;
+  } else if (!toggleState) {
+    toggleState = true;
+  }
+});
 
 /*Image Slider for gallery*/
 let sliderCount = 0;
