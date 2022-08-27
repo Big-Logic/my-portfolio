@@ -8,31 +8,34 @@ const projectNextBtn = document.querySelector('.next__btn');
 const sliderEle = document.querySelectorAll('.gallery__child');
 
 /*Image Slider for gallery*/
-// slider
 let sliderCount = 0;
-sliderEle.forEach((ele) => {
-  ele.style.transform = `translateX(${sliderCount}%)`;
-  ele.dataset.slider = sliderCount;
-  sliderCount += 109;
-});
 
-let ct = 0;
+//slider setup
+const sliderInit = function () {
+  sliderEle.forEach((ele) => {
+    ele.style.transform = `translateX(${sliderCount}%)`;
+    ele.dataset.slider = sliderCount;
+    sliderCount += 109;
+  });
+};
+
+//When the page first loads(Slider setup)
+sliderInit();
+
+let sliderFinishState = 0;
+
+// Slider
 setInterval(() => {
   sliderCount = 0;
-  if (ct === sliderEle.length - 1) {
-    sliderEle.forEach((ele, i) => {
-      ele.dataset.slider = sliderCount;
-      ele.style.transform = `translateX(${sliderCount}%)`;
-      sliderCount += 109;
-    });
-    ct = 0;
+  if (sliderFinishState === sliderEle.length - 1) {
+    sliderInit();
+    sliderFinishState = 0;
   } else {
     sliderEle.forEach((ele) => {
       ele.style.transform = `translateX(${ele.dataset.slider - 109}%)`;
-
       ele.dataset.slider = Number(ele.dataset.slider) - 109;
     });
-    ct += 1;
+    sliderFinishState += 1;
   }
 }, 1500);
 
@@ -50,28 +53,53 @@ setInterval(() => {
   }
 }, 2000);
 
+//Project changing func
 projectEle[0].classList.add('project__content--child-show');
-
 let curIndex = 0;
 
+const setView = function (
+  btn,
+  active = false,
+  bgColor = '#EFEFEF',
+  fgColor = '#606060'
+) {
+  btn.style.backgroundColor = bgColor;
+  btn.style.color = fgColor;
+
+  if (active) {
+    btn.style.cursor = 'pointer';
+    return;
+  }
+
+  btn.style.cursor = 'not-allowed';
+};
+
+setView(projectPrevBtn);
+
+//add event to previous button
 projectPrevBtn.addEventListener('click', function () {
   curIndex -= 1;
   if (curIndex <= 0) {
     curIndex = 0;
+    setView(projectPrevBtn);
   }
   projectEle.forEach((ele) => {
     ele.classList.remove('project__content--child-show');
   });
   projectEle[curIndex].classList.add('project__content--child-show');
+  setView(projectNextBtn, true, '#eb5353', '#fff');
 });
 
+//add event to the next button
 projectNextBtn.addEventListener('click', function () {
   curIndex += 1;
   if (curIndex === projectEle.length) {
     curIndex = projectEle.length - 1;
+    setView(projectNextBtn);
   }
   projectEle.forEach((ele) => {
     ele.classList.remove('project__content--child-show');
   });
   projectEle[curIndex].classList.add('project__content--child-show');
+  setView(projectPrevBtn, true, '#eb5353', '#fff');
 });
