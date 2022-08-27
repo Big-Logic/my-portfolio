@@ -7,7 +7,7 @@ const nameEle = document.querySelector('.author__name');
 const projectContent = document.querySelector('.project__content');
 const projectEle = document.querySelectorAll('.project__content--child');
 const projectPrevBtn = document.querySelector('.prev__btn');
-const projectViewBtn = document.querySelector('project__view--btn');
+const projectViewBtn = document.querySelector('.project__view--btn');
 const projectNextBtn = document.querySelector('.next__btn');
 
 const sliderEle = document.querySelectorAll('.gallery__child');
@@ -93,8 +93,13 @@ setInterval(() => {
 }, 2000);
 
 //Project changing func
-const projectsLinks = ['', 'https://gentlequiz.netlify.app/', ''];
+const projectsLinks = [
+  'https://gentlequiz.netlify.app/',
+  'https://big-logic.github.io/random-password-generator/',
+  '#',
+];
 projectEle[0].classList.add('project__content--child-show');
+projectViewBtn.setAttribute('href', projectsLinks[0]);
 let curIndex = 0;
 
 const setView = function (
@@ -128,6 +133,7 @@ projectPrevBtn.addEventListener('click', function () {
   });
   projectEle[curIndex].classList.add('project__content--child-show');
   setView(projectNextBtn, true, '#eb5353', '#fff');
+  projectViewBtn.setAttribute('href', projectsLinks[curIndex]);
 });
 
 //add event to the next button
@@ -142,4 +148,5 @@ projectNextBtn.addEventListener('click', function () {
   });
   projectEle[curIndex].classList.add('project__content--child-show');
   setView(projectPrevBtn, true, '#eb5353', '#fff');
+  projectViewBtn.setAttribute('href', projectsLinks[curIndex]);
 });
