@@ -1,6 +1,7 @@
 const mainHeader = document.querySelector('.main__header');
 const headerContentCont = document.querySelector('.header__content--cont');
 const navToggleBtn = document.querySelector('.nav__toggle--btn');
+const navLinks = document.querySelectorAll('.nav__link');
 
 const nameEle = document.querySelector('.author__name');
 const projectContent = document.querySelector('.project__content');
@@ -14,12 +15,24 @@ const sliderEle = document.querySelectorAll('.gallery__child');
 /*
 Mobile nav 
 */
-let toggleState = true;
-//Add event listener to the nav toggle btn
-navToggleBtn.addEventListener('click', function () {
+const toggleNav = function () {
   mainHeader.classList.toggle('main__header--show');
   headerContentCont.classList.toggle('header__content--cont-show');
+};
 
+let toggleState = true;
+
+navLinks.forEach((ele) => {
+  ele.addEventListener('click', function () {
+    mainHeader.classList.remove('main__header--show');
+    headerContentCont.classList.remove('header__content--cont-show');
+    toggleState = true;
+    navToggleBtn.innerHTML = '<i class="las la-bars"></i>';
+  });
+});
+//Add event listener to the nav toggle btn
+navToggleBtn.addEventListener('click', function () {
+  toggleNav();
   if (toggleState) {
     this.innerHTML = '<i class="las la-times"></i>';
   } else if (!toggleState) {
@@ -80,6 +93,7 @@ setInterval(() => {
 }, 2000);
 
 //Project changing func
+const projectsLinks = ['', 'https://gentlequiz.netlify.app/', ''];
 projectEle[0].classList.add('project__content--child-show');
 let curIndex = 0;
 

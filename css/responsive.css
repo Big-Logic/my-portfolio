@@ -24,11 +24,13 @@
     overflow: hidden;
     background-color: #355764;
     opacity: 0;
+    visibility: hidden;
     transition: opacity 0.3s;
   }
 
   .main__header--show {
     opacity: 1;
+    visibility: visible;
   }
 
   .header__content--cont {
@@ -46,6 +48,7 @@
     display: none;
   }
   .mb__image--cont {
+    display: block;
     width: 13rem;
     height: 13rem;
     overflow: hidden;
