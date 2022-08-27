@@ -189,7 +189,6 @@ button {
 
 .author__name {
   color: #eb5353;
-  border-bottom: 5px solid #05090a;
   display: inline-block;
   opacity: 0;
   transition: opacity 0.5s;
